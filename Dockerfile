@@ -13,9 +13,8 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-robot=1.5.0-1* git\
      ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control ros-noetic-catkin ros-noetic-interactive-markers \
+     xterm nano \
     && rm -rf /var/lib/apt/lists/*
-
-RUN  mkdir -p ~/catkin_ws/src/manipulator_testing_phys_cov
 
 
 # Install any necessary dependencies or tools you need
@@ -24,7 +23,7 @@ RUN  mkdir -p ~/catkin_ws/src/manipulator_testing_phys_cov
 
 # Set any environment variable you might need
 # ENV TURTLEBOT3_MODEL=burger
-RUN git clone https://github.com/tonypg39/manipulator_testing_phys_cov.git ~/catkin_ws/src/manipulator_testing_phys_cov
+RUN git clone https://github.com/tonypg39/manipulator_testing_phys_cov.git ~/manipulator_testing_phys_cov
 
 # COPY ./manipulator_testing_phys_cov /root/catkin_ws/src/manipulator_testing_phys_cov
 
